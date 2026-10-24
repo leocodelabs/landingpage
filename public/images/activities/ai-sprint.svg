@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Abstract neural network illustration">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#EFA524" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#EFA524" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#EEDEC1" stroke-opacity=".055"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#202628"/>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+  <g stroke="#EEDEC1" stroke-opacity=".28" stroke-width="2">
+    <path d="M212 190 400 300 588 190M212 410 400 300 588 410M212 190v220M588 190v220M400 300v190M212 410h376"/>
+  </g>
+  <g fill="#EEDEC1">
+    <circle cx="212" cy="190" r="9"/>
+    <circle cx="588" cy="190" r="9"/>
+    <circle cx="212" cy="410" r="9"/>
+    <circle cx="588" cy="410" r="9"/>
+    <circle cx="400" cy="490" r="7"/>
+  </g>
+  <circle cx="400" cy="300" r="96" fill="#EFA524"/>
+  <circle cx="400" cy="300" r="116" fill="none" stroke="#EEDEC1" stroke-opacity=".24" stroke-width="2" stroke-dasharray="4 10"/>
+  <text x="400" y="322" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" fill="#191D1F">AI</text>
+  <g fill="#EFA524">
+    <circle cx="152" cy="300" r="6"/>
+    <circle cx="648" cy="300" r="6"/>
+    <circle cx="400" cy="118" r="6"/>
+  </g>
+</svg>

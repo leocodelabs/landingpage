@@ -1,0 +1,24 @@
+---
+import { site, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {
+      [0, 1].map(() => (
+        <div class="marquee-group">
+          {site.marquee.map((item) => (
+            <span>{t(item, locale)}</span>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</div>

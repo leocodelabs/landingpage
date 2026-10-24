@@ -1,0 +1,85 @@
+---
+import Icon from './Icon.astro';
+import { activities, formatDate, site, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { activities: copy } = site;
+---
+
+<section class="section" id="activities">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">{t(copy.eyebrow, locale)}</p>
+        <h2 class="section-title">{t(copy.title, locale)}</h2>
+      </div>
+      <p class="section-description">{t(copy.description, locale)}</p>
+    </div>
+
+    {
+      activities.length ? (
+        <div class="activities-grid">
+          {activities.map((activity) => (
+            <article class="activity-card">
+              <div class="activity-media">
+                {activity.image ? (
+                  <img
+                    src={activity.image}
+                    alt=""
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <img
+                    class="activity-placeholder"
+                    src="/logo-mark.webp"
+                    alt=""
+                    width="512"
+                    height="410"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+                <span class="activity-tag">{t(activity.type, locale)}</span>
+                <time class="activity-date" datetime={activity.date}>
+                  {formatDate(activity.date, locale)}
+                </time>
+              </div>
+
+              <div class="activity-body">
+                <p class="activity-location">
+                  <Icon name="map-pin" size={14} />
+                  {t(activity.location, locale)}
+                </p>
+                <h3>{t(activity.title, locale)}</h3>
+                <p>{t(activity.summary, locale)}</p>
+
+                {activity.link && (
+                  <a
+                    class="activity-link"
+                    href={activity.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t(site.ui.learnMore, locale)}
+                    <Icon name="arrow-up-right" size={16} />
+                    <span class="sr-only">({t(site.ui.newTab, locale)})</span>
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p class="empty-state">{t(copy.empty, locale)}</p>
+      )
+    }
+  </div>
+</section>

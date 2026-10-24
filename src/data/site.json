@@ -1,0 +1,301 @@
+{
+  "brand": {
+    "name": "Leocode",
+    "tagline": {
+      "en": "Open code. Open doors.",
+      "ar": "كود مفتوح. فرص مفتوحة."
+    }
+  },
+  "nav": {
+    "about": {
+      "en": "About",
+      "ar": "من نحن"
+    },
+    "activities": {
+      "en": "Activities",
+      "ar": "الأنشطة"
+    },
+    "team": {
+      "en": "Team",
+      "ar": "الفريق"
+    },
+    "community": {
+      "en": "Get involved",
+      "ar": "انضم إلينا"
+    }
+  },
+  "ui": {
+    "skipToContent": {
+      "en": "Skip to content",
+      "ar": "انتقل إلى المحتوى"
+    },
+    "primaryNav": {
+      "en": "Primary navigation",
+      "ar": "التنقل الرئيسي"
+    },
+    "footerNav": {
+      "en": "Footer navigation",
+      "ar": "تنقل التذييل"
+    },
+    "socialLinks": {
+      "en": "Social links",
+      "ar": "روابط التواصل"
+    },
+    "openMenu": {
+      "en": "Open menu",
+      "ar": "افتح القائمة"
+    },
+    "closeMenu": {
+      "en": "Close menu",
+      "ar": "أغلق القائمة"
+    },
+    "switchLanguage": {
+      "en": "العربية",
+      "ar": "English"
+    },
+    "language": {
+      "en": "Language",
+      "ar": "اللغة"
+    },
+    "visit": {
+      "en": "Visit",
+      "ar": "زيارة"
+    },
+    "learnMore": {
+      "en": "Learn more",
+      "ar": "اعرف المزيد"
+    },
+    "newTab": {
+      "en": "Opens in a new tab",
+      "ar": "يفتح في تبويب جديد"
+    },
+    "switchToDark": {
+      "en": "Switch to dark mode",
+      "ar": "التبديل إلى الوضع الداكن"
+    },
+    "switchToLight": {
+      "en": "Switch to light mode",
+      "ar": "التبديل إلى الوضع الفاتح"
+    }
+  },
+  "marquee": [
+    {
+      "en": "Open source",
+      "ar": "مفتوح المصدر"
+    },
+    {
+      "en": "AI & ML",
+      "ar": "ذكاء اصطناعي وتعلّم آلي"
+    },
+    {
+      "en": "Free lectures",
+      "ar": "محاضرات مجانية"
+    },
+    {
+      "en": "Volunteering",
+      "ar": "تطوع"
+    },
+    {
+      "en": "Arab world",
+      "ar": "العالم العربي"
+    }
+  ],
+  "hero": {
+    "eyebrow": {
+      "en": "A volunteer tech community across the Arab world",
+      "ar": "مجتمع تقني تطوعي في العالم العربي"
+    },
+    "title": {
+      "en": "Open code.",
+      "ar": "كود مفتوح."
+    },
+    "titleAccent": {
+      "en": "Open doors.",
+      "ar": "فرص مفتوحة."
+    },
+    "description": {
+      "en": "Leocode trains open-source AI models, teaches coding to underserved communities, and builds volunteer projects across Jordan and the Arab world.",
+      "ar": "يدرّب ليوكود نماذج ذكاء اصطناعي مفتوحة المصدر، ويعلّم البرمجة للمجتمعات الأقل حظًا، ويبني مشاريع تطوعية برمجية في الاردن والعالم العربي."
+    },
+    "primaryCta": {
+      "en": "Join the community",
+      "ar": "انضم إلى المجتمع"
+    },
+    "secondaryCta": {
+      "en": "See our activities",
+      "ar": "شاهد أنشطتنا"
+    },
+    "badges": [
+      {
+        "en": "Open source",
+        "ar": "مفتوح المصدر"
+      },
+      {
+        "en": "Free to learn",
+        "ar": "مجاني للتعلّم"
+      },
+      {
+        "en": "Volunteer-run",
+        "ar": "بقوة التطوع"
+      }
+    ],
+    "focus": {
+      "en": "AI & ML",
+      "ar": "ذكاء اصطناعي وتعلّم آلي"
+    },
+    "location": {
+      "en": "Arab world",
+      "ar": "العالم العربي"
+    },
+    "proof": {
+      "value": "8,278",
+      "label": {
+        "en": "learners to date",
+        "ar": "متعلّمون حتى اليوم"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": {
+      "en": "Who we are",
+      "ar": "من نحن"
+    },
+    "title": {
+      "en": "A community that builds in the open.",
+      "ar": "مجتمع يبني في العلن."
+    },
+    "description": {
+      "en": "We believe talent is everywhere, but opportunity is not. Leocode brings together developers, students, and mentors to work on open-source AI, learn in public, and serve communities across the Arab world.",
+      "ar": "نؤمن أن الموهبة موجودة في كل مكان، لكن الفرص ليست كذلك. يجمع ليوكود المطورين والطلاب والمرشدين للعمل على ذكاء اصطناعي مفتوح المصدر، والتعلّم علنًا، وخدمة المجتمعات في العالم العربي."
+    },
+    "points": [
+      {
+        "title": {
+          "en": "Open-source AI",
+          "ar": "ذكاء اصطناعي مفتوح"
+        },
+        "body": {
+          "en": "We train, fine-tune, and release AI/ML models and datasets that anyone can use, study, and improve.",
+          "ar": "ندرّب ونضبط وننشر نماذج ومجموعات بيانات ذكاء اصطناعي يمكن للجميع استخدامها ودراستها وتطويرها."
+        }
+      },
+      {
+        "title": {
+          "en": "Code for everyone",
+          "ar": "البرمجة للجميع"
+        },
+        "body": {
+          "en": "Free lectures and hands-on workshops for underserved communities — from the first line of code to the first shipped project.",
+          "ar": "محاضرات وورش عمل مجانية للمجتمعات الأقل حظًا — من أول سطر كود إلى أول مشروع منشور."
+        }
+      },
+      {
+        "title": {
+          "en": "Volunteer power",
+          "ar": "قوة التطوع"
+        },
+        "body": {
+          "en": "Developers and mentors donate their time to build useful tools for nonprofits, schools, and initiatives across the Arab world.",
+          "ar": "مطورون ومرشدون يمنحون وقتهم لبناء أدوات مفيدة للجمعيات والمدارس والمبادرات في العالم العربي."
+        }
+      }
+    ]
+  },
+  "activities": {
+    "eyebrow": {
+      "en": "What we do",
+      "ar": "ماذا نفعل"
+    },
+    "title": {
+      "en": "Recent activities",
+      "ar": "أنشطتنا الأخيرة"
+    },
+    "description": {
+      "en": "AI sprints, free lectures, and volunteer days — all open, all for the community.",
+      "ar": "سبرنتات ذكاء اصطناعي، ومحاضرات مجانية، وأيام تطوع — كلها مفتوحة، وكلها لأجل المجتمع."
+    },
+    "empty": {
+      "en": "New activities are on the way. Follow us on GitHub or YouTube to hear first.",
+      "ar": "هناك أنشطة جديدة في الطريق. تابعنا على GitHub أو YouTube لتعرف أولًا."
+    }
+  },
+  "members": {
+    "eyebrow": {
+      "en": "The den",
+      "ar": "العرين"
+    },
+    "title": {
+      "en": "People behind Leocode",
+      "ar": "العقول خلف ليوكود"
+    },
+    "description": {
+      "en": "A small core team, powered by a growing circle of volunteers and mentors.",
+      "ar": "فريق أساسي صغير، تدعمه دائرة متنامية من المتطوعين والمرشدين."
+    }
+  },
+  "community": {
+    "eyebrow": {
+      "en": "Get involved",
+      "ar": "شارك معنا"
+    },
+    "title": {
+      "en": "Build with us.",
+      "ar": "ابنِ معنا."
+    },
+    "description": {
+      "en": "Whether you write code, teach, design, or want to learn — there is a place for you. Start with a star, a follow, or a simple salam.",
+      "ar": "سواء كنت تكتب الكود، أو تعلّم، أو تصمّم، أو تريد التعلّم — هناك مكان لك. ابدأ بنجمة، أو متابعة، أو سلام بسيط."
+    },
+    "links": {
+      "github": {
+        "label": "GitHub",
+        "description": {
+          "en": "Open-source projects and code",
+          "ar": "مشاريع وأكواد مفتوحة المصدر"
+        }
+      },
+      "huggingface": {
+        "label": "Hugging Face",
+        "description": {
+          "en": "Models, datasets, and experiments",
+          "ar": "نماذج ومجموعات بيانات وتجارب"
+        }
+      },
+      "youtube": {
+        "label": "YouTube",
+        "description": {
+          "en": "Lectures, demos, and workshops",
+          "ar": "محاضرات وعروض وورش عمل"
+        }
+      },
+      "email": {
+        "label": "Email",
+        "description": {
+          "en": "Say salam or partner with us",
+          "ar": "قل سلامًا أو تعاون معنا"
+        }
+      },
+      "sites": {
+        "label": "Nahno page",
+        "description": {
+          "en": "LeoCode's page on Nahno",
+          "ar": "صفحة ليوكود على منصة نَحْنُ"
+        }
+      }
+    }
+  },
+  "footer": {
+    "note": {
+      "en": "Made with care for the Arab world.",
+      "ar": "صُنع بعناية من أجل العالم العربي."
+    },
+    "rights": {
+      "en": "All rights reserved.",
+      "ar": "جميع الحقوق محفوظة."
+    },
+    "nahno": {
+      "en": "LeoCode under",
+      "ar": "ليوكود مسجل على منصة"
+    }
+  }
+}

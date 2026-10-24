@@ -1,0 +1,72 @@
+---
+import Icon from './Icon.astro';
+import { site, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { hero } = site;
+---
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow hero-eyebrow">
+        <span class="pulse-dot"></span>
+        {t(hero.eyebrow, locale)}
+      </p>
+
+      <h1>
+        {t(hero.title, locale)}
+        <span class="accent">{t(hero.titleAccent, locale)}</span>
+      </h1>
+
+      <p class="hero-description">{t(hero.description, locale)}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#community">
+          {t(hero.primaryCta, locale)}
+          <Icon name="arrow-up-right" size={18} />
+        </a>
+        <a class="btn btn--ghost" href="#activities">
+          {t(hero.secondaryCta, locale)}
+          <Icon name="arrow-right" size={17} class="flip-rtl" />
+        </a>
+      </div>
+
+      <ul class="hero-badges">
+        {
+          hero.badges.map((badge) => (
+            <li>
+              <Icon name="check" size={14} />
+              {t(badge, locale)}
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="hero-proof">
+        <strong>{hero.proof.value}</strong>
+        <span>{t(hero.proof.label, locale)}</span>
+      </p>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orb">
+        <span class="hero-logo"></span>
+        <span class="orbit-dot"></span>
+      </div>
+      <span class="hero-chip chip--focus">
+        <span class="chip-dot"></span>
+        {t(hero.focus, locale)}
+      </span>
+      <span class="hero-chip chip--place">
+        <Icon name="map-pin" size={15} />
+        {t(hero.location, locale)}
+      </span>
+    </div>
+  </div>
+</section>

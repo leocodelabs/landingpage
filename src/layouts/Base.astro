@@ -1,0 +1,97 @@
+---
+import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/alexandria';
+import '../styles/global.css';
+import { site, socials, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+}
+
+const { locale, title, description } = Astro.props;
+const dir = locale === 'ar' ? 'rtl' : 'ltr';
+const base = Astro.site ?? new URL('https://leocode.org');
+const canonical = new URL(locale === 'ar' ? '/ar/' : '/', base);
+const enUrl = new URL('/', base);
+const arUrl = new URL('/ar/', base);
+const ogImage = new URL('/og.png', base);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Leocode',
+  url: new URL('/', base).href,
+  logo: new URL('/logo.webp', base).href,
+  description,
+  ...(socials.email ? { email: socials.email.replace(/^mailto:/, '') } : {}),
+  sameAs: [socials.github, socials.huggingface, socials.youtube].filter(Boolean),
+  ...(socials.nahno
+    ? {
+        parentOrganization: {
+          '@type': 'Organization',
+          name: 'Nahno',
+          url: socials.nahno,
+        },
+      }
+    : {}),
+};
+---
+
+<!doctype html>
+<html lang={locale} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="ar" href={arUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+
+    <meta name="theme-color" content="#F7F2E7" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Leocode" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Leocode lion mascot on a dark background" />
+    <meta property="og:locale" content={locale === 'ar' ? 'ar_JO' : 'en_US'} />
+    <meta property="og:locale:alternate" content={locale === 'ar' ? 'en_US' : 'ar_JO'} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        try {
+          root.dataset.theme =
+            localStorage.getItem('leocode-theme') === 'dark' ? 'dark' : 'light';
+        } catch {
+          root.dataset.theme = 'light';
+        }
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', root.dataset.theme === 'dark' ? '#191D1F' : '#F7F2E7');
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t(site.ui.skipToContent, locale)}</a>
+    <slot />
+  </body>
+</html>

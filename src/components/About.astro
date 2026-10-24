@@ -1,0 +1,35 @@
+---
+import { site, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { about } = site;
+---
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">{t(about.eyebrow, locale)}</p>
+        <h2 class="section-title">{t(about.title, locale)}</h2>
+      </div>
+      <p class="section-description">{t(about.description, locale)}</p>
+    </div>
+
+    <div class="about-grid">
+      {
+        about.points.map((point, index) => (
+          <article class="about-point">
+            <span class="about-index">{String(index + 1).padStart(2, '0')}</span>
+            <h3>{t(point.title, locale)}</h3>
+            <p>{t(point.body, locale)}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

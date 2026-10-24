@@ -1,0 +1,378 @@
+media:
+  - name: activities
+    label: Activity images
+    input: public/images/activities
+    output: /images/activities
+    categories: [image]
+    rename: safe
+  - name: members
+    label: Member photos
+    input: public/images/members
+    output: /images/members
+    categories: [image]
+    rename: safe
+
+components:
+  text:
+    type: object
+    label: English / Arabic
+    fields:
+      - name: en
+        label: English
+        type: string
+      - name: ar
+        label: Arabic
+        type: string
+  longText:
+    type: object
+    label: English / Arabic
+    fields:
+      - name: en
+        label: English
+        type: text
+      - name: ar
+        label: Arabic
+        type: text
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "content: add {path} via Pages CMS"
+      update: "content: update {path} via Pages CMS"
+      delete: "content: remove {path} via Pages CMS"
+
+content:
+  - name: site
+    label: Site copy
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: brand
+        label: Brand
+        type: object
+        fields:
+          - name: tagline
+            label: Tagline
+            component: text
+
+      - name: nav
+        label: Navigation
+        type: object
+        fields:
+          - name: about
+            label: About
+            component: text
+          - name: activities
+            label: Activities
+            component: text
+          - name: team
+            label: Team
+            component: text
+          - name: community
+            label: Get involved
+            component: text
+
+      - name: ui
+        label: Interface labels
+        type: object
+        fields:
+          - name: skipToContent
+            label: Skip to content
+            component: text
+          - name: primaryNav
+            label: Primary navigation label
+            component: text
+          - name: footerNav
+            label: Footer navigation label
+            component: text
+          - name: socialLinks
+            label: Social links label
+            component: text
+          - name: openMenu
+            label: Open menu
+            component: text
+          - name: closeMenu
+            label: Close menu
+            component: text
+          - name: switchLanguage
+            label: Language switch
+            component: text
+          - name: switchToDark
+            label: Switch to dark mode
+            component: text
+          - name: switchToLight
+            label: Switch to light mode
+            component: text
+          - name: language
+            label: Language
+            component: text
+          - name: visit
+            label: Visit
+            component: text
+          - name: learnMore
+            label: Learn more
+            component: text
+          - name: newTab
+            label: New tab hint
+            component: text
+
+      - name: marquee
+        label: Scrolling strip
+        type: object
+        list: true
+        fields:
+          - name: en
+            label: English
+            type: string
+          - name: ar
+            label: Arabic
+            type: string
+
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            component: text
+          - name: title
+            label: Title
+            component: text
+          - name: titleAccent
+            label: Title accent
+            component: text
+          - name: description
+            label: Description
+            component: longText
+          - name: primaryCta
+            label: Primary button
+            component: text
+          - name: secondaryCta
+            label: Secondary button
+            component: text
+          - name: badges
+            label: Badges
+            type: object
+            list: true
+            fields:
+              - name: en
+                label: English
+                type: string
+              - name: ar
+                label: Arabic
+                type: string
+          - name: focus
+            label: Focus chip
+            component: text
+          - name: location
+            label: Location chip
+            component: text
+          - name: proof
+            label: Learners to date
+            type: object
+            fields:
+              - name: value
+                label: Number
+                type: string
+              - name: label
+                label: Label
+                component: text
+
+      - name: about
+        label: About
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            component: text
+          - name: title
+            label: Title
+            component: text
+          - name: description
+            label: Description
+            component: longText
+          - name: points
+            label: Principles
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                component: text
+              - name: body
+                label: Body
+                component: longText
+
+      - name: activities
+        label: Activities section
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            component: text
+          - name: title
+            label: Title
+            component: text
+          - name: description
+            label: Description
+            component: longText
+          - name: empty
+            label: Empty state
+            component: longText
+
+      - name: members
+        label: Team section
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            component: text
+          - name: title
+            label: Title
+            component: text
+          - name: description
+            label: Description
+            component: longText
+
+      - name: community
+        label: Community
+        type: object
+        fields:
+          - name: eyebrow
+            label: Eyebrow
+            component: text
+          - name: title
+            label: Title
+            component: text
+          - name: description
+            label: Description
+            component: longText
+          - name: links
+            label: Social cards
+            type: object
+            fields:
+              - name: github
+                label: GitHub
+                type: object
+                fields:
+                  - name: label
+                    label: Label
+                    type: string
+                  - name: description
+                    label: Description
+                    component: text
+              - name: huggingface
+                label: Hugging Face
+                type: object
+                fields:
+                  - name: label
+                    label: Label
+                    type: string
+                  - name: description
+                    label: Description
+                    component: text
+              - name: youtube
+                label: YouTube
+                type: object
+                fields:
+                  - name: label
+                    label: Label
+                    type: string
+                  - name: description
+                    label: Description
+                    component: text
+              - name: email
+                label: Email
+                type: object
+                fields:
+                  - name: label
+                    label: Label
+                    type: string
+                  - name: description
+                    label: Description
+                    component: text
+              - name: sites
+                label: Nahno page
+                type: object
+                fields:
+                  - name: label
+                    label: Label
+                    type: string
+                  - name: description
+                    label: Description
+                    component: text
+
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - name: note
+            label: Note
+            component: text
+          - name: rights
+            label: Rights
+            component: text
+          - name: nahno
+            label: Affiliation line
+            component: text
+
+  - name: activities
+    label: Activities
+    type: file
+    path: src/data/activities.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Title
+        component: text
+      - name: summary
+        label: Summary
+        component: longText
+      - name: date
+        label: Date
+        type: date
+        options:
+          format: "yyyy-MM-dd"
+      - name: type
+        label: Type
+        component: text
+      - name: location
+        label: Location
+        component: text
+      - name: image
+        label: Image
+        type: image
+        options:
+          media: activities
+      - name: link
+        label: Link (optional)
+        type: string
+
+  - name: members
+    label: Team members
+    type: file
+    path: src/data/members.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: role
+        label: Role
+        component: text
+      - name: image
+        label: Photo
+        type: image
+        options:
+          media: members
+      - name: github
+        label: GitHub URL (optional)
+        type: string
+      - name: linkedin
+        label: LinkedIn URL (optional)
+        type: string

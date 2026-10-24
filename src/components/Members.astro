@@ -1,0 +1,90 @@
+---
+import Icon from './Icon.astro';
+import { members, site, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { members: copy } = site;
+
+const initials = (name: string) =>
+  name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
+---
+
+{
+  members.length > 0 && (
+    <section class="section" id="team">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">{t(copy.eyebrow, locale)}</p>
+            <h2 class="section-title">{t(copy.title, locale)}</h2>
+          </div>
+          <p class="section-description">{t(copy.description, locale)}</p>
+        </div>
+
+        <div class="members-grid">
+          {members.map((member) => (
+            <article class="member-card">
+              <div class="member-media">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    width="640"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div class="member-fallback" aria-hidden="true">
+                    {initials(member.name)}
+                  </div>
+                )}
+              </div>
+
+              <div class="member-body">
+                <h3>{member.name}</h3>
+                <p>{t(member.role, locale)}</p>
+
+                {(member.github || member.linkedin) && (
+                  <div class="member-links">
+                    {member.github && (
+                      <a
+                        href={member.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} — GitHub`}
+                      >
+                        <Icon name="github" size={16} />
+                      </a>
+                    )}
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} — LinkedIn`}
+                      >
+                        <Icon name="linkedin" size={16} />
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

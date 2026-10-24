@@ -1,0 +1,35 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import About from '../components/About.astro';
+import Activities from '../components/Activities.astro';
+import Members from '../components/Members.astro';
+import Community from '../components/Community.astro';
+import Footer from '../components/Footer.astro';
+import { site, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const title =
+  locale === 'ar' ? 'ليوكود — كود مفتوح. فرص مفتوحة.' : 'Leocode — Open code. Open doors.';
+const description = t(site.hero.description, locale);
+---
+
+<Base locale={locale} title={title} description={description}>
+  <Header locale={locale} />
+  <main id="main">
+    <Hero locale={locale} />
+    <Marquee locale={locale} />
+    <About locale={locale} />
+    <Activities locale={locale} />
+    <Members locale={locale} />
+    <Community locale={locale} />
+  </main>
+  <Footer locale={locale} />
+</Base>

@@ -1,0 +1,81 @@
+---
+import Icon from './Icon.astro';
+import { localePath, members, otherLocale, site, socials, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const nextLocale = otherLocale(locale);
+const year = new Date().getFullYear();
+
+const nav = [
+  { href: '#about', label: t(site.nav.about, locale) },
+  { href: '#activities', label: t(site.nav.activities, locale) },
+  ...(members.length ? [{ href: '#team', label: t(site.nav.team, locale) }] : []),
+  { href: '#community', label: t(site.nav.community, locale) },
+];
+
+const links = [
+  { href: socials.github, icon: 'github', label: 'GitHub' },
+  { href: socials.huggingface, icon: 'huggingface', label: 'Hugging Face' },
+  { href: socials.youtube, icon: 'youtube', label: 'YouTube' },
+  { href: socials.email, icon: 'mail', label: 'Email' },
+].filter((link) => link.href);
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href={localePath(locale)}>
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Leocode</span>
+        </a>
+        <p>{t(site.brand.tagline, locale)}</p>
+        <p class="footer-nahno">
+          {t(site.footer.nahno, locale)}{' '}
+          {
+            socials.nahno ? (
+              <a href={socials.nahno} target="_blank" rel="noopener noreferrer">
+                Nahno.org
+              </a>
+            ) : (
+              <span>Nahno.org</span>
+            )
+          }
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label={t(site.ui.footerNav, locale)}>
+        {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+
+      <div class="footer-social" aria-label={t(site.ui.socialLinks, locale)}>
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              aria-label={link.label}
+            >
+              <Icon name={link.icon} size={18} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} Leocode. {t(site.footer.rights, locale)}</p>
+      <p>{t(site.footer.note, locale)}</p>
+      <a class="footer-lang" href={localePath(nextLocale)} hreflang={nextLocale} lang={nextLocale}>
+        <Icon name="globe" size={14} />
+        {t(site.ui.switchLanguage, locale)}
+      </a>
+    </div>
+  </div>
+</footer>

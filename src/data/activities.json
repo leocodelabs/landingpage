@@ -1,0 +1,47 @@
+[
+  {
+    "title": {
+      "en": "Open-source AI sprint",
+      "ar": "سبرنت ذكاء اصطناعي مفتوح"
+    },
+    "summary": {
+      "en": "We fine-tuned a small Arabic language model, documented the process, and released the dataset and weights on Hugging Face.",
+      "ar": "ضبطنا نموذجًا لغويًا عربيًا صغيرًا، ووثّقنا العملية، ونشرنا مجموعة البيانات والأوزان على Hugging Face."
+    },
+    "date": "2026-09-12",
+    "type": { "en": "AI sprint", "ar": "سبرنت ذكاء اصطناعي" },
+    "location": { "en": "Amman, Jordan", "ar": "عمّان، الأردن" },
+    "image": "/images/activities/ai-sprint.svg",
+    "link": ""
+  },
+  {
+    "title": {
+      "en": "Code for everyone",
+      "ar": "البرمجة للجميع"
+    },
+    "summary": {
+      "en": "A free four-week Python and web basics track for students from underserved communities, with laptops and mentors provided.",
+      "ar": "مسار مجاني لمدة أربعة أسابيع في أساسيات بايثون والويب لطلاب من مجتمعات أقل حظًا، مع توفير أجهزة ومرشدين."
+    },
+    "date": "2026-08-15",
+    "type": { "en": "Lectures", "ar": "محاضرات" },
+    "location": { "en": "Amman, Jordan", "ar": "عمّان، الأردن" },
+    "image": "/images/activities/code-for-everyone.svg",
+    "link": ""
+  },
+  {
+    "title": {
+      "en": "Build for good",
+      "ar": "ابنِ للخير"
+    },
+    "summary": {
+      "en": "A volunteer day with local nonprofits, shipping small tools that save their teams hours every week.",
+      "ar": "يوم تطوعي مع جمعيات محلية، ننجز فيه أدوات صغيرة توفّر على فرقها ساعات كل أسبوع."
+    },
+    "date": "2026-07-04",
+    "type": { "en": "Volunteering", "ar": "تطوع" },
+    "location": { "en": "Zarqa, Jordan", "ar": "الزرقاء، الأردن" },
+    "image": "/images/activities/build-for-good.svg",
+    "link": ""
+  }
+]

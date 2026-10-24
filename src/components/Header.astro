@@ -1,0 +1,166 @@
+---
+import Icon from './Icon.astro';
+import { localePath, members, otherLocale, site, socials, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const nextLocale = otherLocale(locale);
+const nextPath = localePath(nextLocale);
+const switchLabel = t(site.ui.switchLanguage, locale);
+
+const nav = [
+  { href: '#about', label: t(site.nav.about, locale) },
+  { href: '#activities', label: t(site.nav.activities, locale) },
+  ...(members.length ? [{ href: '#team', label: t(site.nav.team, locale) }] : []),
+  { href: '#community', label: t(site.nav.community, locale) },
+];
+---
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href={localePath(locale)}>
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Leocode</span>
+    </a>
+
+    <nav class="nav" aria-label={t(site.ui.primaryNav, locale)}>
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <div class="header-actions">
+      <button
+        class="icon-btn theme-btn"
+        type="button"
+        data-theme-toggle
+        data-light-label={t(site.ui.switchToDark, locale)}
+        data-dark-label={t(site.ui.switchToLight, locale)}
+        aria-label={t(site.ui.switchToDark, locale)}
+      >
+        <Icon name="moon" size={18} class="icon-moon" />
+        <Icon name="sun" size={18} class="icon-sun" />
+      </button>
+
+      {
+        socials.github && (
+          <a
+            class="icon-btn"
+            href={socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <Icon name="github" size={18} />
+          </a>
+        )
+      }
+
+      <a
+        class="lang-switch"
+        href={nextPath}
+        hreflang={nextLocale}
+        lang={nextLocale}
+        aria-label={`${t(site.ui.language, locale)}: ${switchLabel}`}
+      >
+        <Icon name="globe" size={15} />
+        <span>{switchLabel}</span>
+      </a>
+
+      <button
+        class="menu-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label={t(site.ui.openMenu, locale)}
+        data-menu-toggle
+        data-open-label={t(site.ui.openMenu, locale)}
+        data-close-label={t(site.ui.closeMenu, locale)}
+      >
+        <Icon name="menu" size={20} class="icon-open" />
+        <Icon name="close" size={20} class="icon-close" />
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobile-menu" data-menu hidden>
+    <nav class="container" aria-label={t(site.ui.primaryNav, locale)}>
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      {
+        socials.github && (
+          <a class="mobile-social" href={socials.github} target="_blank" rel="noopener noreferrer">
+            <Icon name="github" size={17} />
+            <span>GitHub</span>
+            <Icon name="arrow-up-right" size={15} />
+          </a>
+        )
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+
+  if (header) {
+    const toggle = header.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+    const panel = header.querySelector<HTMLElement>('[data-menu]');
+
+    if (toggle && panel) {
+      const setOpen = (open: boolean) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute(
+          'aria-label',
+          open ? (toggle.dataset.closeLabel ?? '') : (toggle.dataset.openLabel ?? ''),
+        );
+        panel.hidden = !open;
+      };
+
+      toggle.addEventListener('click', () => setOpen(panel.hasAttribute('hidden')));
+
+      panel.addEventListener('click', (event) => {
+        if ((event.target as HTMLElement).closest('a')) setOpen(false);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !panel.hidden) {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+    }
+  }
+
+  const themeToggle = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+
+  if (themeToggle) {
+    const root = document.documentElement;
+    const syncThemeLabel = () => {
+      const dark = root.dataset.theme === 'dark';
+      themeToggle.setAttribute(
+        'aria-label',
+        (dark ? themeToggle.dataset.darkLabel : themeToggle.dataset.lightLabel) ?? '',
+      );
+    };
+
+    themeToggle.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+
+      try {
+        localStorage.setItem('leocode-theme', next);
+      } catch {
+        // Storage can be unavailable in private browsing; the theme still works for this visit.
+      }
+
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute('content', next === 'dark' ? '#191D1F' : '#F7F2E7');
+      syncThemeLabel();
+    });
+
+    syncThemeLabel();
+  }
+</script>

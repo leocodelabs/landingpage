@@ -1,0 +1,72 @@
+---
+import Icon from './Icon.astro';
+import { site, socials, t } from '../lib/content';
+import type { Locale } from '../lib/content';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { community } = site;
+
+const links = [
+  { key: 'github', href: socials.github, icon: 'github' },
+  { key: 'huggingface', href: socials.huggingface, icon: 'huggingface' },
+  { key: 'youtube', href: socials.youtube, icon: 'youtube' },
+  { key: 'email', href: socials.email, icon: 'mail' },
+  { key: 'sites', href: socials.nahnoSites, icon: 'globe' },
+] as const;
+
+const visibleLinks = links.filter((link) => link.href);
+---
+
+<section class="community" id="community">
+  <img
+    class="community-mark"
+    src="/logo-mark.webp"
+    alt=""
+    width="512"
+    height="410"
+    loading="lazy"
+    aria-hidden="true"
+  />
+
+  <div class="container community-grid">
+    <div class="community-copy">
+      <p class="eyebrow">{t(community.eyebrow, locale)}</p>
+      <h2 class="section-title">{t(community.title, locale)}</h2>
+      <p class="community-description">{t(community.description, locale)}</p>
+    </div>
+
+    <div class="social-grid">
+      {
+        visibleLinks.map((link) => {
+          const external = link.href.startsWith('http');
+          const item = community.links[link.key];
+
+          return (
+            <a
+              class="social-card"
+              href={link.href}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+            >
+              <span class="social-top">
+                <span class="social-icon">
+                  <Icon name={link.icon} size={20} />
+                </span>
+                <Icon name="arrow-up-right" size={18} class="social-arrow" />
+              </span>
+              <span>
+                <span class="social-label">{item.label}</span>
+                <span class="social-description">{t(item.description, locale)}</span>
+              </span>
+              {external && <span class="sr-only">({t(site.ui.newTab, locale)})</span>}
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#191D1F"/>
+  <circle cx="1040" cy="110" r="320" fill="#EFA524" opacity=".07"/>
+  <circle cx="1080" cy="560" r="180" fill="#EEDEC1" opacity=".05"/>
+  <g stroke="#EEDEC1" stroke-opacity=".08">
+    <path d="M740 0v630M820 0v630M900 0v630M980 0v630M1060 0v630M1140 0v630"/>
+    <path d="M700 80h500M700 200h500M700 320h500M700 440h500M700 560h500"/>
+  </g>
+  <rect x="64" y="72" width="1072" height="486" rx="28" fill="none" stroke="#EEDEC1" stroke-opacity=".14"/>
+  <text x="470" y="252" fill="#EEDEC1" font-family="Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="2">LEOCODE</text>
+  <text x="474" y="330" fill="#EFA524" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="500">Open code. Open doors.</text>
+  <text x="474" y="408" fill="#EEDEC1" fill-opacity=".72" font-family="Helvetica Neue, Arial, sans-serif" font-size="23" font-weight="400">Open-source AI  ·  Free coding lectures  ·  Across the Arab world</text>
+  <text x="474" y="490" fill="#EEDEC1" fill-opacity=".5" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400">leocode.org</text>
+</svg>
