@@ -44,7 +44,7 @@
     "en": "Created an educational lecture video introducing Java programming and Object-Oriented Programming (OOP). The lecture covers Java fundamentals, data types, type casting, input/output, operators, conditional statements, loops, OOP concepts (classes, objects, methods, static, constructors, shadowing, and default values), followed by practice questions from an OOP test bank.",
     "ar": "إعداد فيديو تعليمي يشرح أساسيات البرمجة بلغة Java ومفاهيم البرمجة كائنية التوجه (OOP). يتناول الفيديو أنواع البيانات والتحويل بينها، والإدخال والإخراج، والمعاملات، والجمل الشرطية، والحلقات التكرارية، ومفاهيم البرمجة كائنية التوجه مثل الأصناف والكائنات والدوال و static والبنّاءات (Constructors) و Shadowing والقيم الافتراضية، بالإضافة إلى أسئلة تدريبية من بنك أسئلة OOP."
   },
-  "date": "2026-07-04",
+  "date": "2026-04-15",
   "type": {
     "en": "Educational Content",
     "ar": "محتوى تعليمي"
