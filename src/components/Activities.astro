@@ -24,58 +24,90 @@ const { activities: copy } = site;
     {
       activities.length ? (
         <div class="activities-grid">
-          {activities.map((activity) => (
-            <article class="activity-card">
-              <div class="activity-media">
-                {activity.image ? (
-                  <img
-                    src={activity.image}
-                    alt=""
-                    width="800"
-                    height="600"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <img
-                    class="activity-placeholder"
-                    src="/logo-mark.webp"
-                    alt=""
-                    width="512"
-                    height="410"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                )}
-                <span class="activity-tag">{t(activity.type, locale)}</span>
-                <time class="activity-date" datetime={activity.date}>
-                  {formatDate(activity.date, locale)}
-                </time>
-              </div>
+          {activities.map((activity) =>
+            activity.link ? (
+              <a
+                class="activity-card"
+                href={activity.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="activity-media">
+                  {activity.image ? (
+                    <img
+                      src={activity.image}
+                      alt=""
+                      width="800"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <img
+                      class="activity-placeholder"
+                      src="/logo-mark.webp"
+                      alt=""
+                      width="512"
+                      height="410"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
+                  <span class="activity-tag">{t(activity.type, locale)}</span>
+                  <time class="activity-date" datetime={activity.date}>
+                    {formatDate(activity.date, locale)}
+                  </time>
+                </div>
 
-              <div class="activity-body">
-                <p class="activity-location">
-                  <Icon name="map-pin" size={14} />
-                  {t(activity.location, locale)}
-                </p>
-                <h3>{t(activity.title, locale)}</h3>
-                <p>{t(activity.summary, locale)}</p>
+                <div class="activity-body">
+                  <p class="activity-location">
+                    <Icon name="map-pin" size={14} />
+                    {t(activity.location, locale)}
+                  </p>
+                  <h3>{t(activity.title, locale)}</h3>
+                  <p>{t(activity.summary, locale)}</p>
+                </div>
+              </a>
+            ) : (
+              <article class="activity-card">
+                <div class="activity-media">
+                  {activity.image ? (
+                    <img
+                      src={activity.image}
+                      alt=""
+                      width="800"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <img
+                      class="activity-placeholder"
+                      src="/logo-mark.webp"
+                      alt=""
+                      width="512"
+                      height="410"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
+                  <span class="activity-tag">{t(activity.type, locale)}</span>
+                  <time class="activity-date" datetime={activity.date}>
+                    {formatDate(activity.date, locale)}
+                  </time>
+                </div>
 
-                {activity.link && (
-                  <a
-                    class="activity-link"
-                    href={activity.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t(site.ui.learnMore, locale)}
-                    <Icon name="arrow-up-right" size={16} />
-                    <span class="sr-only">({t(site.ui.newTab, locale)})</span>
-                  </a>
-                )}
-              </div>
-            </article>
-          ))}
+                <div class="activity-body">
+                  <p class="activity-location">
+                    <Icon name="map-pin" size={14} />
+                    {t(activity.location, locale)}
+                  </p>
+                  <h3>{t(activity.title, locale)}</h3>
+                  <p>{t(activity.summary, locale)}</p>
+                </div>
+              </article>
+            )
+          )}
         </div>
       ) : (
         <p class="empty-state">{t(copy.empty, locale)}</p>

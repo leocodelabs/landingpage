@@ -920,6 +920,11 @@ html[lang='ar'] .about-point p {
     border-color 0.3s var(--ease);
 }
 
+a.activity-card {
+  color: inherit;
+  text-decoration: none;
+}
+
 .activity-card:hover {
   transform: translateY(-4px);
   border-color: rgba(239, 165, 36, 0.5);
@@ -1008,21 +1013,6 @@ html[lang='ar'] .activity-body h3 {
 
 html[lang='ar'] .activity-body p {
   line-height: 1.88;
-}
-
-.activity-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: auto;
-  padding-top: 0.8rem;
-  color: var(--accent-strong);
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.activity-link:hover {
-  color: var(--accent-bright);
 }
 
 .empty-state {
