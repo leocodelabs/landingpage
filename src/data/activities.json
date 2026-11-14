@@ -1,19 +1,25 @@
 [
   {
-    "title": {
-      "en": "Open-source AI sprint",
-      "ar": "سبرنت ذكاء اصطناعي مفتوح"
-    },
-    "summary": {
-      "en": "We fine-tuned a small Arabic language model, documented the process, and released the dataset and weights on Hugging Face.",
-      "ar": "ضبطنا نموذجًا لغويًا عربيًا صغيرًا، ووثّقنا العملية، ونشرنا مجموعة البيانات والأوزان على Hugging Face."
-    },
-    "date": "2026-09-12",
-    "type": { "en": "AI sprint", "ar": "سبرنت ذكاء اصطناعي" },
-    "location": { "en": "Amman, Jordan", "ar": "عمّان، الأردن" },
-    "image": "/images/activities/ai-sprint.svg",
-    "link": ""
+  "title": {
+    "en": "Arabic NER Dataset Analysis",
+    "ar": "تحليل مجموعات بيانات الكيانات العربية"
   },
+  "summary": {
+    "en": "Explored and analyzed open-source Arabic NER datasets on Hugging Face, examining their structure, entity categories, annotations, and suitability for training Arabic NER models. Documented the analysis on GitHub.",
+    "ar": "استكشفنا وحللنا مجموعات بيانات التعرف على الكيانات العربية مفتوحة المصدر على Hugging Face، من خلال دراسة بنيتها وفئات الكيانات والوسوم ومدى ملاءمتها لتدريب نماذج NER العربية. ووثقنا التحليل على GitHub."
+  },
+  "date": "2026-11-06",
+  "type": {
+    "en": "Data Analysis",
+    "ar": "تحليل البيانات"
+  },
+  "location": {
+    "en": "Amman, Jordan",
+    "ar": "عمّان، الأردن"
+  },
+  "image": "/images/activities/cv18_ner_length_distribution.png",
+  "link": "https://github.com/leocodelabs/arabic-ner-pii-data-audit"
+},
   {
     "title": {
       "en": "Code for everyone",
