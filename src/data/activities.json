@@ -35,19 +35,25 @@
     "image": "/images/activities/code-for-everyone.svg",
     "link": ""
   },
-  {
-    "title": {
-      "en": "Build for good",
-      "ar": "ابنِ للخير"
-    },
-    "summary": {
-      "en": "A volunteer day with local nonprofits, shipping small tools that save their teams hours every week.",
-      "ar": "يوم تطوعي مع جمعيات محلية، ننجز فيه أدوات صغيرة توفّر على فرقها ساعات كل أسبوع."
-    },
-    "date": "2026-07-04",
-    "type": { "en": "Volunteering", "ar": "تطوع" },
-    "location": { "en": "Zarqa, Jordan", "ar": "الزرقاء، الأردن" },
-    "image": "/images/activities/build-for-good.svg",
-    "link": ""
-  }
+{
+  "title": {
+    "en": "Java & OOP Explained",
+    "ar": "شرح جافا والبرمجة كائنية التوجه"
+  },
+  "summary": {
+    "en": "Created an educational lecture video introducing Java programming and Object-Oriented Programming (OOP). The lecture covers Java fundamentals, data types, type casting, input/output, operators, conditional statements, loops, OOP concepts (classes, objects, methods, static, constructors, shadowing, and default values), followed by practice questions from an OOP test bank.",
+    "ar": "إعداد فيديو تعليمي يشرح أساسيات البرمجة بلغة Java ومفاهيم البرمجة كائنية التوجه (OOP). يتناول الفيديو أنواع البيانات والتحويل بينها، والإدخال والإخراج، والمعاملات، والجمل الشرطية، والحلقات التكرارية، ومفاهيم البرمجة كائنية التوجه مثل الأصناف والكائنات والدوال و static والبنّاءات (Constructors) و Shadowing والقيم الافتراضية، بالإضافة إلى أسئلة تدريبية من بنك أسئلة OOP."
+  },
+  "date": "2026-07-04",
+  "type": {
+    "en": "Educational Content",
+    "ar": "محتوى تعليمي"
+  },
+  "location": {
+    "en": "Online",
+    "ar": "عن بُعد"
+  },
+  "image": "/images/activities/java-oop.jpg",
+  "link": "https://youtu.be/_G78Us3BNEI"
+}
 ]
